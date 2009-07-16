@@ -1,0 +1,92 @@
+body {
+  font-family: "Helvetica Neue", Helvetica, sans-serif;
+  padding: 100px;
+}
+
+h1 {
+  background: black;
+  color: white;
+  font-weight: normal;
+  padding: 10px;
+  position: relative;
+  top: -13px;
+}
+
+#subtitle {
+  color: #C7C7C7;
+}
+
+blockquote, pre, .example {
+  font-size: 12px;
+}
+
+form {
+  padding: 30px;
+}
+
+.box {
+  float: left;
+  height: 100%;
+  padding: 20px;
+  padding-top: 47px;
+  color: #c7c7c7;
+  font-size: 12px;
+}
+
+.box h2 {
+  padding-bottom: 1px;
+}
+
+.box ul {
+  list-style-type: none;
+  padding-left: 0;
+}
+
+.box li {
+  margin: 0;
+  margin-bottom: 2px;
+  padding: 0;
+}
+
+.box a {
+  display: block;
+  background: #e4eaec;
+  color: #727576;
+  text-decoration: none;
+  padding: 4px;
+  padding-left: 10px;
+  padding-right: 10px;
+  margin: 0;
+  width: 300px;
+  text-align: center;
+}
+
+  .box a:hover {
+    color: #000;
+  }
+
+#intro li a {
+  background: #F2F8FB;
+}
+
+#intro li a:hover {
+  background: #E8ECF1;
+}
+
+#labs li a {
+  background: #424444;
+  color: #fff;
+}
+
+#labs li a:hover {
+  background: #242525;
+}
+
+#debug {
+  color: #ccc;
+  font-size: 12px;
+  font-style: italic;
+  position: absolute;
+  top: 10px;
+  left:  10px;
+}

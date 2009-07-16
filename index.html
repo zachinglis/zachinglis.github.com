@@ -1,0 +1,59 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+  <head>
+    <title>line-through</title>
+    <link rel="stylesheet" href="stylesheets/basic.css" type="text/css" charset="utf-8">
+    <style type="text/css" media="screen">
+
+    </style>
+    <script src="http://www.google.com/jsapi"></script>
+    <script type="text/javascript">
+      google.load("jquery", "1.3.2");
+    </script>
+    <script type="text/javascript" charset="utf-8">
+      $(function() {
+        var limit = 100 // how many repos to list
+        var login = 'zachinglis' // your username
+        var repos = [];
+        list = $('#repositories');
+
+        $.getJSON('http://github.com/api/v1/json/' + login + '?callback=?', function(data) {
+          $.each(data.user.repositories, function() {
+            if (!this.fork) repos.push(this)
+          });
+
+          repos.sort(function(a, b) {
+            return b.watchers - a.watchers
+          });
+
+          $.each(repos.slice(0, limit), function() {
+            list.append('<li><a href="' + this.url + '">' + this.name + '</a></li>')
+          });
+        });
+      });
+    </script>
+  </head>
+  <body>
+    <div id="intro" class="box">
+      <h1>Labs @ Zach Inglis</h1>
+      <ul id="other">
+        <li><a href="http://zachinglis.com">Blog</a></li>
+        <li><a href="http://portfolio.zachinglis.com">Portfolio</a></li>
+        <li><a href="http://github.com/zachinglis">Github</a></li>
+      </ul>
+    </div>
+    
+    <div id="labs" class="box list">
+      <h2>Labs</h2>
+      <ul id="labs">
+        <li><a href="/jquery-linethrough">jquery.linethrough</a></li>
+      </ul>
+    </div>
+    
+    <div id="other-repos" class="box list">
+      <h2>Other Repositories</h2>
+      <ul id="repositories"></ul>
+    </div>
+  </body>
+</html>

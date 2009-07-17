@@ -3,7 +3,7 @@ body {
   padding: 100px;
 }
 
-h1 {
+#intro h1 {
   background: black;
   color: white;
   font-weight: normal;
